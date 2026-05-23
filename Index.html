@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soletrando Jogos - 400 Perguntas</title>
-  <meta name="theme-color" content="#7C3AED">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/icons/icon-192.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Perguntas - Conhecimento</title>
+    <style>
+        /* Estilo Glassmorphism Luxo */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 { font-size: 24px; margin-bottom: 20px; color: #38bdf8; }
+        .card { margin: 20px 0; padding: 20px; background: rgba(255, 255, 255, 0.02); border-radius: 12px; }
+        .btn {
+            background: rgba(56, 189, 248, 0.2);
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover { background: #38bdf8; color: #0f172a; }
+    </style>
 </head>
 <body>
-  <div id="app">
-    <!-- MENU -->
-    <div id="menu" class="tela ativa">
-      <h1 class="logo">🎯 SOLETRANDO</h1>
-      <p class="sub">400 Perguntas • 4 Nichos • 10 Fases</p>
-      <div id="nichos" class="grid-nichos"></div>
-    </div>
 
-    <!-- JOGO -->
-    <div id="jogo" class="tela">
-      <div class="header">
-        <button id="btn-voltar">← Menu</button>
-        <div class="info">
-          <span id="nicho-nome"></span>
-          <span id="fase-atual">Fase 1</span>
+    <div class="container">
+        <h1>Mental Quiz</h1>
+        <div class="card">
+            <p id="pergunta">Selecione um nicho para começar o jogo.</p>
+            <p id="dica" style="color: #94a3b8; font-style: italic; display: none;"></p>
         </div>
-        <div class="vidas">❤️ <span id="vidas">3</span></div>
-      </div>
-
-      <div class="progresso">
-        <div id="barra-progresso"></div>
-      </div>
-
-      <div class="pergunta-box">
-        <h2 id="pergunta-texto"></h2>
-        <button id="btn-dica" class="dica">💡 Dica -1 ❤️</button>
-        <p id="dica-texto" class="dica-texto"></p>
-      </div>
-
-      <div class="resposta-box">
-        <input type="text" id="input-resposta" placeholder="Digite a resposta..." autocomplete="off">
-        <button id="btn-responder">Responder</button>
-      </div>
-
-      <div class="placar">
-        <span>Acertos: <b id="acertos">0</b>/10</span>
-        <span>Pontos: <b id="pontos">0</b></span>
-      </div>
+        <button class="btn" onclick="mostrarDica()">Ver Dica</button>
+        <button class="btn" style="border-color: #34d399; color: #34d399; background: rgba(52, 211, 153, 0.1);" onclick="mostrarResposta()">Ver Resposta</button>
     </div>
 
-    <!-- MODAL VITÓRIA -->
-    <div id="modal" class="modal">
-      <div class="modal-conteudo">
-        <h2 id="modal-titulo"></h2>
-        <p id="modal-texto"></p>
-        <div id="presente" class="presente"></div>
-        <button id="modal-btn"></button>
-      </div>
-    </div>
-  </div>
-
-  <script src="assets/js/banco.js"></script>
-  <script src="assets/js/app.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    }
-  </script>
+    <script src="index.tecnologia.js"></script>
+    <script src="index.natureza.js"></script>
+    <script src="index.historia.js"></script>
+    <script src="index.culturapop.js"></script>
 </body>
 </html>
