@@ -1,0 +1,122 @@
+const perguntasTecnologia = [
+    // Fase 1
+    { p: "O que usamos para clicar nas coisas no computador?", r: "Mouse", d: "Ele fica na mesa e tem uma setinha na tela." },
+    { p: "Como se chama a tela que a gente toca para usar?", r: "Touchscreen", d: "É o que usamos nos celulares modernos." },
+    { p: "Onde salvamos nossas fotos e joguinhos?", r: "Memória", d: "É como se fosse a mochila do computador." },
+    { p: "Qual é o 'cérebro' que faz o computador funcionar?", r: "Processador", d: "Ele é uma pecinha pequena que pensa muito rápido." },
+    { p: "Qual dispositivo usamos para ver vídeos e jogar?", r: "Celular", d: "Cabe no bolso e é muito inteligente." },
+    { p: "Como se chama a rede que nos liga ao mundo todo?", r: "Internet", d: "É através dela que você acessa sites e vídeos." },
+    { p: "O que a gente usa para digitar letras e números?", r: "Teclado", d: "Tem várias teclas com letras e símbolos." },
+    { p: "Como se chama o robô que responde perguntas?", r: "Inteligência Artificial", d: "É quem está te ajudando a montar esse jogo agora!" },
+    { p: "Onde o computador se liga na tomada?", r: "Cabo de energia", d: "Ele precisa de eletricidade para ligar." },
+    { p: "Qual objeto usamos para tirar fotos digitais?", r: "Câmera", d: "Captura momentos para guardar na memória." },
+
+    // Fase 2
+    { p: "Como se chama o visor onde vemos a imagem do computador?", r: "Monitor", d: "É la tela grande onde tudo aparece." },
+    { p: "O que a gente usa para imprimir desenhos no papel?", r: "Impressora", d: "Ela coloca tinta no papel para criar figuras." },
+    { p: "Como chamamos o programa que abre sites na internet?", r: "Navegador", d: "É onde você digita o endereço dos sites, como o Chrome." },
+    { p: "Qual é o nome do fio que conecta a internet ao computador?", r: "Cabo de rede", d: "Ele leva os dados da rede direto para a máquina." },
+    { p: "Como se chama o 'desenho' que representa um programa?", r: "Ícone", d: "É aquela pequena figurinha que você clica para abrir algo." },
+    { p: "O que usamos para ouvir música no computador?", r: "Caixas de som", d: "Sem elas, o computador fica silencioso." },
+    { p: "Onde ficam guardados os arquivos de forma permanente?", r: "Disco Rígido", d: "É o lugar onde ficam todos os seus jogos e fotos." },
+    { p: "Como se chama a bateria que usamos no celular?", r: "Bateria", d: "É o que faz o celular funcionar sem estar ligado na tomada." },
+    { p: "O que é um 'Wi-Fi'?", r: "Internet sem fio", d: "Permite usar a internet sem precisar de cabos." },
+    { p: "O que fazemos quando o computador trava?", r: "Reiniciar", d: "Desligar e ligar de novo para ele voltar a funcionar." },
+
+    // Fase 3
+    { p: "O que é um 'Notebook'?", r: "Computador portátil", d: "Um computador que você pode levar para qualquer lugar." },
+    { p: "O que a gente usa para fazer chamadas de vídeo?", r: "Webcam", d: "Uma pequena câmera que mostra o seu rosto para os outros." },
+    { p: "Como se chama o sinal de proteção para usar sites?", r: "Senha", d: "É o código secreto que só você deve saber." },
+    { p: "Qual é o nome do aparelho que traz o Wi-Fi para casa?", r: "Roteador", d: "Ele distribui a internet pelo ar para todos os aparelhos." },
+    { p: "O que acontece quando deletamos um arquivo?", r: "Vai para a Lixeira", d: "Ele fica guardado por um tempo antes de sumir de vez." },
+    { p: "Como chamamos um erro no programa?", r: "Bug", d: "É como se fosse uma falha atrapalhando o jogo." },
+    { p: "O que usamos para carregar o celular fora de casa?", r: "Power Bank", d: "É uma bateria portátil que dá carga extra." },
+    { p: "Como se chama o ato de enviar um arquivo para a internet?", r: "Upload", d: "É o envio de uma foto ou vídeo para um site." },
+    { p: "Como se chama o ato de baixar algo da internet?", r: "Download", d: "É o recebimento de jogos ou fotos no seu aparelho." },
+    { p: "O que é o 'Modo Avião'?", r: "Desliga as conexões", d: "Serve para não usar redes de rádio durante os voos." },
+
+    // Fase 4
+    { p: "O que é um 'Link'?", r: "Endereço de site", d: "É aquele texto ou botão azul que você clica para abrir uma página." },
+    { p: "Onde pesquisamos dúvidas na internet?", r: "Google", d: "É o buscador mais famoso do mundo." },
+    { p: "Como se chama o 'ícone' de uma lixeira?", r: "Lixeira", d: "É onde jogamos fora o que não queremos mais." },
+    { p: "O que é um 'e-mail'?", r: "Coureio eletrônico", d: "Uma forma de mandar mensagens digitais para pessoas distantes." },
+    { p: "Qual é o nome da tela que você usa agora?", r: "Monitor", d: "É a parte que mostra a imagem do seu jogo ou computador." },
+    { p: "O que acontece quando o celular 'trava'?", r: "Fica parado", d: "O sistema para de responder aos seus comandos." },
+    { p: "Como chamamos o programa que protege o PC?", r: "Antivírus", d: "Ele cuida da segurança para ninguém roubar dados." },
+    { p: "O que é o 'Bluetooth'?", r: "Conexão sem fio", d: "Serve para conectar fones de ouvido ou caixas de som ao celular." },
+    { p: "O que é uma 'pasta'?", r: "Lugar de guardar arquivos", d: "É onde organizamos nossos trabalhos e fotos no computador." },
+    { p: "Para que serve le teclado?", r: "Escrever", d: "É usado para digitar textos, senhas e nomes de jogos." },
+
+    // Fase 5
+    { p: "O que é um 'Tablet'?", r: "Computador plano", d: "É como um celular gigante, ótimo para ver vídeos e desenhar." },
+    { p: "O que é o 'Cursor'?", r: "Setinha do mouse", d: "É aquela flechinha que se move na tela quando mexemos o mouse." },
+    { p: "O que significa o ícone de uma impressora?", r: "Imprimir", d: "Serve para passar o que está na tela para o papel." },
+    { p: "Onde ficam os 'Favoritos' no navegador?", r: "Barra de endereços", d: "É uma lista de sites que você gosta e quer acessar rápido." },
+    { p: "O que é o 'Modo Noturno'?", r: "Tela mais escura", d: "Deixa a tela menos brilhante para não cansar a vista à noite." },
+    { p: "O que significa um ícone de lupa?", r: "Buscar", d: "Geralmente indica um campo de pesquisa para achar algo." },
+    { p: "O que é um 'Pendrive'?", r: "Memória portátil", d: "Um pequeno objeto que guarda arquivos para levar no bolso." },
+    { p: "Para que serve o ícone de 'Seta para trás'?", r: "Voltar", d: "Serve para retornar à página ou tela anterior." },
+    { p: "O que é um 'Pixel'?", r: "Pontinho da imagem", d: "Tudo que vemos na tela é formado por milhares desses pontinhos." },
+    { p: "O que é um 'Upgrade'?", r: "Atualização", d: "Quando deixamos um programa ou computador melhor que antes." },
+
+    // Fase 6
+    { p: "O que acontece quando o computador 'congela'?", r: "Não responde", d: "A tela fica parada e nenhum clique funciona." },
+    { p: "O que é um 'Software'?", r: "Programa", d: "É a parte lógica que faz os jogos e apps rodarem." },
+    { p: "O que é um 'Hardware'?", r: "Peças físicas", d: "É tudo o que você pode tocar, como o mouse e o teclado." },
+    { p: "O que é o ícone de uma caneta?", r: "Editar", d: "Usamos para mudar textos ou desenhos que já fizemos." },
+    { p: "Por que usamos o 'Filtro de luz azul'?", r: "Saúde dos olhos", d: "Ele diminui o brilho cansativo da tela durante a noite." },
+    { p: "O que é o 'User' ou 'Usuário'?", r: "Você", d: "É o nome ou perfil que identifica quem está usando o aparelho." },
+    { p: "O que acontece ao esvaziar a lixeira?", r: "Apaga para sempre", d: "Os arquivos não podem mais ser recuperados no dispositivo." },
+    { p: "O que é um 'Joystick'?", r: "Controle de jogos", d: "Serve para mover os personagens e jogar com mais facilidade." },
+    { p: "O que é 'Atualizar' uma página?", r: "Recarregar", d: "Faz o site buscar as novidades mais recentes na rede." },
+    { p: "O que é o brilho da tela?", r: "Luminosidade", d: "Você pode deixar mais claro ou mais escuro conforme o ambiente." },
+
+    // Fase 7
+    { p: "O que é um 'Backup'?", r: "Cópia de segurança", d: "É guardar uma cópia das suas fotos caso o celular quebre." },
+    { p: "Para que serve a lupa com sinal de mais?", r: "Zoom", d: "Serve para ampliar e ver detalhes pequenos em fotos ou mapas." },
+    { p: "O que determina a nitidez de uma tela?", r: "Resolução", d: "Quanto mais pixels a tela tiver, mais limpa será a imagem." },
+    { p: "Por que colocamos o celular na tomada?", r: "Encher a bateria", d: "Sem energia, ele não liga para funcionar." },
+    { p: "O que é o 'Modo Silencioso'?", r: "Tira o som", d: "O celular para de emitir alertas sonoros e apenas vibra." },
+    { p: "O que é um 'Servidor'?", r: "Computador gigante", d: "Ele armazena arquivos de sites para que fiquem disponíveis na web." },
+    { p: "Para que serve o ícone de um disquete?", r: "Salvar", d: "É o comando clássico para registrar o seu trabalho feito." },
+    { p: "O que é o 'Modo Escuro'?", r: "Fundo preto", d: "Deixa o aplicativo escuro para economizar energia e cansar menos a vista." },
+    { p: "O que é um 'Arquivo PDF'?", r: "Documento fixo", d: "Um formato de arquivo que não altera a posição das letras ao abrir." },
+    { p: "Como chamamos o ícone de engrenagem?", r: "Configurações", d: "É onde você gerencia o brilho, o som e as contas do aparelho." },
+
+    // Fase 8
+    { p: "Qual a menor unidade de cor em telas digitais?", r: "Pixel", d: "Imagine que a imagem é um mosaico feito de milhões deles." },
+    { p: "O que o Modo Avião desliga?", r: "Sinais sem fio", d: "Corta instantaneamente redes móveis, Wi-Fi e Bluetooth." },
+    { p: "O que significa o ícone de uma tesoura?", r: "Recortar", d: "Remove uma informação de um lugar para você colar em outro." },
+    { p: "O que é o sistema operacional?", r: "Sistema principal", d: "É o software base que faz o celular ou PC funcionar, como o Android." },
+    { p: "O que é um 'Hyperlink'?", r: "Link", d: "É o atalho clicável que te leva direto para outra página de internet." },
+    { p: "O que faz o botão com uma seta circular?", r: "Recarregar", d: "Ele atualiza a página trazendo as informações em tempo real." },
+    { p: "O que colocamos no celular para ter um número?", r: "Chip", d: "É aquela pecinha pequena que te conecta à sua operadora." },
+    { p: "O que substitui o mouse no notebook?", r: "Touchpad", d: "É aquela área plana onde você desliza o dedo para mexer a seta." },
+    { p: "O que protege a rede contra invasões?", r: "Firewall", d: "Funciona como um guarda de trânsito, bloqueando conexões perigosas." },
+    { p: "O que significa o ícone de uma lâmpada?", r: "Dica ou Ideia", d: "Geralmente aparece para sugerir uma solução rápida no app." },
+
+    // Fase 9
+    { p: "O que compõe as imagens digitais?", r: "Pontinhos de luz", d: "Milhares deles brilhando juntos formam o que você vê no monitor." },
+    { p: "O que fazemos ao digitar usuário e senha?", r: "Login", d: "É o processo de entrada para acessar uma conta protegida." },
+    { p: "Para que serve a seta apontando para la esquerda?", r: "Retornar", d: "Leva você de volta para a tela ou menu anterior." },
+    { p: "Qual recurso deixa o fundo do app preto?", r: "Modo Noturno", d: "Excelente para usar o aparelho no escuro sem machucar a visão." },
+    { p: "Que aparelho copia um papel para o PC?", r: "Scanner", d: "Transforma um documento físico em uma imagem digital." },
+    { p: "O que significa o ícone de lápis ou caneta?", r: "Editar", d: "Permite modificar o texto ou o perfil selecionado." },
+    { p: "Onde salvamos arquivos fora do celular?", r: "Nuvem", d: "Guarda seus dados em servidores online seguros sem ocupar espaço físico." },
+    { p: "Como chamamos os fones de ouvido com microfone integrado?", r: "Headset", d: "Muito utilizado para jogar online ou fazer reuniões de trabalho." },
+    { p: "Que tecla tira foto da tela do computador?", r: "Print Screen", d: "Captura instantaneamente a imagem exibida no monitor." },
+    { p: "Como chamamos um telefone com internet e apps?", r: "Smartphone", d: "É o aparelho moderno de bolso que usamos para tudo hoje." },
+
+    // Fase 10
+    { p: "O que é fazer uma melhoria de hardware no PC?", r: "Upgrade", d: "Trocar peças antigas por novas para deixar o sistema mais rápido." },
+    { p: "Qual era o ícone antigo usado para a função 'Salvar'?", r: "Disquete", d: "Era o objeto quadrado usado antigamente para guardar arquivos." },
+    { p: "Qual o termo técnico para travamento por erro no código?", r: "Bug", d: "Uma falha inesperada que fecha o aplicativo sozinho." },
+    { p: "Qual programa varre o sistema atrás de ameaças?", r: "Antivírus", d: "Funciona como um escudo protetor para os seus arquivos." },
+    { p: "Onde guardamos arquivos organizados por tema no computador?", r: "Pasta", d: "Funciona igual a uma pasta escolar, mas de forma virtual." },
+    { p: "O que o navegador faz ao abrir um site?", r: "Carregar", d: "É a busca e montagem dos elementos visuais da página." },
+    { p: "O que desliga o sinal de operadora e Wi-Fi de uma vez?", r: "Modo Avião", d: "Desativa todas as transmissões de rádio do dispositivo de forma rápida." },
+    { p: "O que forma a resolução de uma foto?", r: "Pixels", d: "A menor unidade de medida de uma imagem digital." },
+    { p: "Para onde vai o arquivo deletado antes de sumir por completo?", r: "Lixeira", d: "É o depósito temporário de arquivos descartados." },
+    { p: "Como chamamos a parte física de qualquer eletrônico?", r: "Hardware", d: "É tudo o que é físico e palpável, como circuitos, telas e botões." }
+];
+
