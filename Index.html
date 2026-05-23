@@ -10,8 +10,8 @@
             margin: 0;
             padding: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #090d16, #110f2c); /* Escurecido levemente para dar mais destaque ao conteúdo */
-            color: #ffffff; /* Branco puro para máxima leitura */
+            background: linear-gradient(135deg, #090d16, #110f2c);
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -19,15 +19,15 @@
             -webkit-font-smoothing: antialiased;
         }
         .container {
-            background: rgba(255, 255, 255, 0.05); /* Aumentado um fio a opacidade para isolar o fundo */
-            backdrop-filter: blur(16px); /* Aumentado o desfoque para o texto não misturar com o fundo */
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.15); /* Borda ligeiramente mais nítida */
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 16px;
             padding: 30px;
             max-width: 500px;
             width: 100%;
-            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6); /* Sombra projetada mais forte para dar profundidade */
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
             text-align: center;
             margin-top: 40px;
             box-sizing: border-box;
@@ -36,12 +36,12 @@
             font-size: 28px; 
             margin-bottom: 25px; 
             color: #38bdf8; 
-            text-shadow: 0 2px 8px rgba(56, 189, 248, 0.3); /* Brilho neon sutil para leitura rápida */
+            text-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);
         }
         .card { 
             margin: 20px 0; 
             padding: 22px; 
-            background: rgba(0, 0, 0, 0.3); /* Fundo do card escurecido para a pergunta 'saltar' aos olhos */
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 12px; 
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -56,7 +56,7 @@
             background: rgba(56, 189, 248, 0.15);
             border: 1px solid #38bdf8;
             color: #38bdf8;
-            padding: 14px 24px; /* Botões ligeiramente maiores, ideais para o toque no celular */
+            padding: 14px 24px;
             border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
@@ -74,7 +74,7 @@
 
         /* --- ESTILOS PREMIUM PARA VÍDEO E TRANSIÇÃO COM ALTO CONTRASTE --- */
 
-        /* Tela do Vídeo de Apresentação */
+        /* Tela do Vídeo de Apresentação Inicial */
         #tela-intro {
             position: fixed;
             top: 0;
@@ -97,7 +97,7 @@
             position: absolute;
             top: 25px;
             right: 25px;
-            background: rgba(0, 0, 0, 0.6); /* Escurecido para sempre aparecer sobre qualquer vídeo */
+            background: rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -109,14 +109,14 @@
             font-weight: 600;
         }
 
-        /* Tela de Transição de 3 Segundos (Nicho) */
+        /* Tela de Transição de 3 Segundos (Vídeo do Nicho) */
         #tela-transicao {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(6, 9, 16, 0.85); /* Fundo mais denso para dar foco absoluto à imagem e som */
+            background: rgba(6, 9, 16, 0.85);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             z-index: 9998;
@@ -132,7 +132,7 @@
             opacity: 1;
             pointer-events: auto;
         }
-        #img-nicho {
+        #video-nicho {
             max-width: 80%;
             max-height: 45vh;
             object-fit: contain;
@@ -141,7 +141,7 @@
             transform: scale(0.8);
             transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        #tela-transicao.ativa #img-nicho {
+        #tela-transicao.ativa #video-nicho {
             transform: scale(1);
         }
         #nome-nicho {
@@ -166,18 +166,16 @@
 
     <div id="tela-intro">
         <video id="video-apresentacao" autoplay muted playsinline>
-            <source src="videos/apresentacao.mp4" type="video/mp4">
+            <source src="video jogos/apresentacao.mp4" type="video/mp4">
             Seu navegador não suporta vídeos.
         </video>
         <button class="btn-pular" onclick="fecharApresentacao()">Pular Vídeo</button>
     </div>
 
     <div id="tela-transicao">
-        <img id="img-nicho" src="" alt="Imagem do Nicho">
+        <video id="video-nicho" muted playsinline></video>
         <div id="nome-nicho"></div>
     </div>
-
-    <audio id="som-nicho" playsinline></audio>
 
     <div class="container">
         <h1>Mental Quiz</h1>
@@ -206,39 +204,35 @@
         let perguntasAtuais = [];
         let indicePergunta = 0;
 
-        // Configuração das Mídias de cada Nicho
+        // Configuração apontando direto para os seus novos vídeos da pasta "video jogos"
         const configNichos = {
             natureza: {
                 nome: "Natureza",
-                imagem: "imagens/nicho-natureza.png",
-                som: "sons/natureza.mp3",
+                videoSrc: "video jogos/natureza.mp4",
                 dados: typeof perguntasNatureza !== 'undefined' ? perguntasNatureza : []
             },
             tecnologia: {
                 nome: "Tecnologia",
-                imagem: "imagens/nicho-tecnologia.png",
-                som: "sons/tecnologia.mp3",
+                videoSrc: "video jogos/tecnologia.mp4",
                 dados: typeof perguntasTecnologia !== 'undefined' ? perguntasTecnologia : []
             },
             historia: {
                 nome: "História",
-                imagem: "imagens/nicho-historia.png",
-                som: "sons/historia.mp3",
+                videoSrc: "video jogos/historia.mp4",
                 dados: typeof perguntasHistoria !== 'undefined' ? perguntasHistoria : []
             },
             culturapop: {
                 nome: "Cultura Pop",
-                imagem: "imagens/nicho-culturapop.png",
-                som: "sons/culturapop.mp3",
+                videoSrc: "video jogos/cultura.mp4",
                 dados: typeof perguntasCulturaPop !== 'undefined' ? perguntasCulturaPop : []
             }
         };
 
-        // 🎬 Fecha a apresentação inicial (quando o vídeo acaba ou clica em Pular)
-        const video = document.getElementById('video-apresentacao');
+        // 🎬 Controla o vídeo de entrada geral do App
+        const videoIntro = document.getElementById('video-apresentacao');
         const telaIntro = document.getElementById('tela-intro');
 
-        video.onended = function() {
+        videoIntro.onended = function() {
             fecharApresentacao();
         };
 
@@ -246,37 +240,37 @@
             telaIntro.style.opacity = '0';
             setTimeout(() => {
                 telaIntro.style.display = 'none';
-                video.pause();
+                videoIntro.pause();
             }, 800);
         }
 
-        // 🖼️ Lógica de Escolha do Nicho com Transição de 3 Segundos
+        // 🖼️ Transição Premium: Roda o vídeo do nicho por 3 segundos
         function selecionarNicho(nichoChave) {
             const nicho = configNichos[nichoChave];
             perguntasAtuais = nicho.dados;
             indicePergunta = 0;
 
-            // 1. Configura os elements da tela de transição
-            document.getElementById('img-nicho').src = nicho.imagem;
+            const videoNicho = document.getElementById('video-nicho');
+            
+            // 1. Alimenta o player de transição com o seu vídeo do TikTok
+            videoNicho.src = nicho.videoSrc;
             document.getElementById('nome-nicho').innerText = nicho.nome;
 
-            // 2. Toca o som do bicho/ambiente correspondente
-            const somElemento = document.getElementById('som-nicho');
-            somElemento.src = nicho.som;
-            somElemento.play().catch(e => console.log("Áudio aguardando clique do usuário."));
-
-            // 3. Mostra a tela de transição (Efeito Glassmorphic ativa)
+            // 2. Sobe a tela de efeito Glassmorphic
             const telaTransicao = document.getElementById('tela-transicao');
             telaTransicao.classList.add('ativa');
+            
+            // 3. Dá o play no vídeo do nicho
+            videoNicho.play().catch(e => console.log("Aguardando interação do usuário para rodar mídia."));
 
-            // 4. Timer de 3 segundos para sumir e carregar a primeira pergunta
+            // 4. Aguarda os 3 segundos exatos para limpar e carregar a pergunta
             setTimeout(() => {
                 telaTransicao.classList.remove('ativa');
+                videoNicho.pause();
                 carregarPergunta();
             }, 3000);
         }
 
-        // Carrega a pergunta na interface
         function carregarPergunta() {
             if (perguntasAtuais.length > 0) {
                 const item = perguntasAtuais[indicePergunta];
@@ -300,7 +294,6 @@
                 const item = perguntasAtuais[indicePergunta];
                 alert("Resposta correta: " + item.r);
                 
-                // Avança de pergunta de forma simples para testar
                 indicePergunta = (indicePergunta + 1) % perguntasAtuais.length;
                 carregarPergunta();
             }
@@ -308,4 +301,3 @@
     </script>
 </body>
 </html>
-
