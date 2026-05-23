@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soletrando Jogos - 400 Perguntas</title>
+  <meta name="theme-color" content="#7C3AED">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="assets/icons/icon-192.png">
+</head>
+<body>
+  <div id="app">
+    <!-- MENU -->
+    <div id="menu" class="tela ativa">
+      <h1 class="logo">🎯 SOLETRANDO</h1>
+      <p class="sub">400 Perguntas • 4 Nichos • 10 Fases</p>
+      <div id="nichos" class="grid-nichos"></div>
+    </div>
+
+    <!-- JOGO -->
+    <div id="jogo" class="tela">
+      <div class="header">
+        <button id="btn-voltar">← Menu</button>
+        <div class="info">
+          <span id="nicho-nome"></span>
+          <span id="fase-atual">Fase 1</span>
+        </div>
+        <div class="vidas">❤️ <span id="vidas">3</span></div>
+      </div>
+
+      <div class="progresso">
+        <div id="barra-progresso"></div>
+      </div>
+
+      <div class="pergunta-box">
+        <h2 id="pergunta-texto"></h2>
+        <button id="btn-dica" class="dica">💡 Dica -1 ❤️</button>
+        <p id="dica-texto" class="dica-texto"></p>
+      </div>
+
+      <div class="resposta-box">
+        <input type="text" id="input-resposta" placeholder="Digite a resposta..." autocomplete="off">
+        <button id="btn-responder">Responder</button>
+      </div>
+
+      <div class="placar">
+        <span>Acertos: <b id="acertos">0</b>/10</span>
+        <span>Pontos: <b id="pontos">0</b></span>
+      </div>
+    </div>
+
+    <!-- MODAL VITÓRIA -->
+    <div id="modal" class="modal">
+      <div class="modal-conteudo">
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-texto"></p>
+        <div id="presente" class="presente"></div>
+        <button id="modal-btn"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/banco.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
